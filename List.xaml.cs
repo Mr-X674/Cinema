@@ -35,35 +35,35 @@ namespace Cinema
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
-            DataTable table = new DataTable("film"); // В скобках указываем название таблицы
+            DataTable table = new DataTable("film"); 
             dataAdp.Fill(table);
-            ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
+            ListGrid.ItemsSource = table.DefaultView;
             sqlConnection.CloseConnection();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             sqlConnection.OpenConnection();
-            string cmd = "SELECT * FROM hall"; // Из какой таблицы нужен вывод 
+            string cmd = "SELECT * FROM hall"; 
             SqlCommand createCommand = new SqlCommand(cmd, sqlConnection.GetConnection());
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
-            DataTable table = new DataTable("hall"); // В скобках указываем название таблицы
+            DataTable table = new DataTable("hall");
             dataAdp.Fill(table);
-            ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
+            ListGrid.ItemsSource = table.DefaultView; 
             sqlConnection.CloseConnection();
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             sqlConnection.OpenConnection();
-            string cmd = "SELECT * FROM genre"; // Из какой таблицы нужен вывод 
+            string cmd = "SELECT * FROM genre"; 
             SqlCommand createCommand = new SqlCommand(cmd, sqlConnection.GetConnection());
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
-            DataTable table = new DataTable("genre"); // В скобках указываем название таблицы
+            DataTable table = new DataTable("genre"); 
             dataAdp.Fill(table);
-            ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
+            ListGrid.ItemsSource = table.DefaultView; 
             sqlConnection.CloseConnection();
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -74,9 +74,9 @@ namespace Cinema
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
-            DataTable table = new DataTable("session"); // В скобках указываем название таблицы
+            DataTable table = new DataTable("session");
             dataAdp.Fill(table);
-            ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
+            ListGrid.ItemsSource = table.DefaultView; 
             sqlConnection.CloseConnection();
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -87,9 +87,9 @@ namespace Cinema
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
-            DataTable table = new DataTable("ticket"); // В скобках указываем название таблицы
+            DataTable table = new DataTable("ticket");
             dataAdp.Fill(table);
-            ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
+            ListGrid.ItemsSource = table.DefaultView; 
             sqlConnection.CloseConnection();
         }
 
