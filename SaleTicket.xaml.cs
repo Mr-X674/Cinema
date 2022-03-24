@@ -28,7 +28,7 @@ namespace Cinema
         {
             if (e.ChangedButton == MouseButton.Left)
             {
-                this.DragMove();
+                DragMove();
             }
         }
     }
