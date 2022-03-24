@@ -111,6 +111,8 @@ namespace Cinema
             SaleTicket saleTicket = new SaleTicket();
             saleTicket.Show();
             this.Close();
+            int a;
         }
+
     }
 }
