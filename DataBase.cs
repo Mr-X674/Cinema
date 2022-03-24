@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Cinema
 {
-    class DataBase
+    public class DataBase
     {
         SqlConnection sqlConnection = new SqlConnection("Data Source=MSI-AEGIS-TI3;Initial Catalog=Cinema;Integrated Security=True");
         public void OpenConnection()

@@ -26,71 +26,71 @@ namespace Cinema
         {
             InitializeComponent();
         }
-        SqlConnection sqlConnection = new SqlConnection("Data Source=MSI-AEGIS-TI3;Initial Catalog=Cinema2.0;Integrated Security=True");
+        DataBase sqlConnection = new DataBase();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            sqlConnection.Open();
+            sqlConnection.OpenConnection();
             string cmd = "SELECT film.id_film,film.film,genre.genre,film.[date],film.years,hall.hall FROM film left join genre on genre.id_genre = film.genre left join hall on hall.id_hall = film.hall"; // Из какой таблицы нужен вывод 
-            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection);
+            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection.GetConnection());
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
             DataTable table = new DataTable("film"); // В скобках указываем название таблицы
             dataAdp.Fill(table);
             ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
-            sqlConnection.Close();
+            sqlConnection.CloseConnection();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            sqlConnection.Open();
+            sqlConnection.OpenConnection();
             string cmd = "SELECT * FROM hall"; // Из какой таблицы нужен вывод 
-            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection);
+            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection.GetConnection());
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
             DataTable table = new DataTable("hall"); // В скобках указываем название таблицы
             dataAdp.Fill(table);
             ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
-            sqlConnection.Close();
+            sqlConnection.CloseConnection();
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            sqlConnection.Open();
+            sqlConnection.OpenConnection();
             string cmd = "SELECT * FROM genre"; // Из какой таблицы нужен вывод 
-            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection);
+            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection.GetConnection());
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
             DataTable table = new DataTable("genre"); // В скобках указываем название таблицы
             dataAdp.Fill(table);
             ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
-            sqlConnection.Close();
+            sqlConnection.CloseConnection();
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            sqlConnection.Open();
+            sqlConnection.OpenConnection();
             string cmd = "SELECT [session].id_seans,film.film,[session].price,film.[date],hall.hall FROM [session] left join film on film.id_film = [session].film left join hall on hall.id_hall = [session].hall"; // Из какой таблицы нужен вывод 
-            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection);
+            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection.GetConnection());
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
             DataTable table = new DataTable("session"); // В скобках указываем название таблицы
             dataAdp.Fill(table);
             ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
-            sqlConnection.Close();
+            sqlConnection.CloseConnection();
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            sqlConnection.Open();
+            sqlConnection.OpenConnection();
             string cmd = "SELECT ticket.id_ticket, film.film,film.date,hall.hall,ticket.number_rows,ticket.number_place FROM ticket left join film on film.id_film = ticket.film left join hall on hall.id_hall = ticket.hall"; // Из какой таблицы нужен вывод 
-            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection);
+            SqlCommand createCommand = new SqlCommand(cmd, sqlConnection.GetConnection());
             createCommand.ExecuteNonQuery();
 
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
             DataTable table = new DataTable("ticket"); // В скобках указываем название таблицы
             dataAdp.Fill(table);
             ListGrid.ItemsSource = table.DefaultView; // Сам вывод 
-            sqlConnection.Close();
+            sqlConnection.CloseConnection();
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
@@ -113,5 +113,9 @@ namespace Cinema
             this.Close();
         }
 
+        private void ListGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
