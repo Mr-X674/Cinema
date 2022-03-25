@@ -102,7 +102,6 @@ namespace Cinema
                 this.DragMove();
             }
         }
-
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
             SaleTicket saleTicket = new SaleTicket();
