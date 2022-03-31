@@ -32,7 +32,7 @@ namespace Cinema
             }
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBox_DropDownClosed(object sender, EventArgs e)
         {
 
         }

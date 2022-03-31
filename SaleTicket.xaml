@@ -8,12 +8,16 @@
         Title="SaleTicket" Height="450" Width="800" WindowStyle="None">
     <Grid MouseDown="Grid_MouseDown">
 
-        <TextBlock HorizontalAlignment="Left" Margin="50,50,0,0" Text="Выбор фильма " TextWrapping="Wrap" VerticalAlignment="Top" Width="110" FontSize="15"/>
-        <TextBlock HorizontalAlignment="Left" Margin="200,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="15"><Run Text="Выберите сеанс"/><Run  Text=""/><Run Text=""/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="350,50,0,0"  Text="Выбор зала" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" FontSize="15"><Run /><Run  Text=""/><Run Text=" "/></TextBlock>
-        <ComboBox HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top" Width="120" Height="25" />
-        <ComboBox HorizontalAlignment="Left"  Margin="200,80,0,0" VerticalAlignment="Top" Width="120" Height="25" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" FontFamily="Times New Roman"><Run Text="Выберите фильм"/><Run Language="ru-ru" /></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="200,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="16" FontFamily="Times New Roman"><Run Text="Выберите время"/><Run  Text=""/><Run Text=""/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="350,50,0,0"  Text="Выберите зал" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" FontFamily="Times New Roman"><Run /><Run  Text=""/><Run Text=" "/></TextBlock>
+        <ComboBox HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top" Width="120" Height="25"  DropDownClosed="ComboBox_DropDownClosed" />
+        <ComboBox HorizontalAlignment="Left"  Margin="200,80,0,0" VerticalAlignment="Top" Width="120" Height="25" />
         <ComboBox HorizontalAlignment="Left" Margin="350,80,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="510,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" FontFamily="Times New Roman" FontSize="16"><Run Language="ru-ru" Text="Ряд"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="16 " Margin="670,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="16"><Run Language="ru-ru" Text="Место"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <ComboBox HorizontalAlignment="Left" Height="25" Margin="497,80,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Height="25" Margin="648,80,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
