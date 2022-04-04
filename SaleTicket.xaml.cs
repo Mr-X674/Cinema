@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF_StudentsAchievement_Project.Resources.Profiles;
 
 namespace Cinema
 {
@@ -19,22 +21,44 @@ namespace Cinema
     /// </summary>
     public partial class SaleTicket : Window
     {
+        DataBaseField baseField = new DataBaseField();
+        SqlConnection sqlConnection = new SqlConnection("Data Source=MSI-AEGIS-TI3;Initial Catalog=Cinema;Integrated Security=True");
+        DataBase dataBase = new DataBase();
+
         public SaleTicket()
         {
             InitializeComponent();
         }
 
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
+            this.Close();
+        }
+
+        public void FilmComboBoxRefresh()
+        {
+            dataBase.OpenConnection();
+            string queryString = "SELECT film FROM film";
+            SqlCommand command = new SqlCommand(queryString, dataBase.GetConnection());
+            SqlDataReader sqlDataReader = command.ExecuteReader();
+            FilmComboBox.Items.Clear();
+            while (sqlDataReader.Read())
             {
-                DragMove();
+                string film = sqlDataReader.GetString(1);
+                FilmComboBox.Items.Add($"{film}");
             }
+            dataBase.CloseConnection();
         }
 
-        private void ComboBox_DropDownClosed(object sender, EventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            FilmComboBoxRefresh();
         }
+
+        //private void ComboBox_DropDownClosed(object sender, EventArgs e)
+        //{
+        //    baseField.Film = Convert.ToInt32(check.SearchElementID(FilmComboBox.Text));
+        //}
+
     }
 }

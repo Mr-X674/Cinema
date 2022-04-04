@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Cinema"
         mc:Ignorable="d"
         Title="List" Height="450" Width="870" WindowStyle="None">
-    <Grid MouseDown="Grid_MouseDown" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>

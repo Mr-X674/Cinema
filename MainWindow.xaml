@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Cinema"
         mc:Ignorable="d"
         Title="MainWindow" Height="430" Width="650" WindowStyle="None" Background="#FF361613">
-    <StackPanel Margin="12" MouseDown="StackPanel_MouseDown">
+    <StackPanel Margin="12" >
         <StackPanel.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
