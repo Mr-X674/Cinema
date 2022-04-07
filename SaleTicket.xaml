@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cinema"
         mc:Ignorable="d"
-        Title="SaleTicket" Height="450" Width="800" WindowStyle="None" >
+        Title="SaleTicket" Height="450" Width="800" WindowStyle="None" Loaded="Window_Loaded">
     <Grid >
 
         <TextBlock HorizontalAlignment="Left" Margin="50,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" FontFamily="Times New Roman"><Run Text="Выберите фильм"/><Run Language="ru-ru" /></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="200,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="16" FontFamily="Times New Roman"><Run Text="Выберите время"/><Run  Text=""/><Run Text=""/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="350,50,0,0"  Text="Выберите зал" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" FontFamily="Times New Roman"><Run /><Run  Text=""/><Run Text=" "/></TextBlock>
-        <ComboBox Name="FilmComboBox" HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top" Width="120" Height="25" />
-        <ComboBox HorizontalAlignment="Left"  Margin="200,80,0,0" VerticalAlignment="Top" Width="120" Height="25" />
-        <ComboBox HorizontalAlignment="Left" Margin="350,80,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <ComboBox Name="FilmComboBox" HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top" Width="120" Height="25" SelectionChanged="FilmComboBox_SelectionChanged" />
+        <ComboBox Name="DateTimeComboBox"  HorizontalAlignment="Left"  Margin="200,80,0,0" VerticalAlignment="Top" Width="120" Height="25" />
+        <ComboBox Name="HallComboBox"  HorizontalAlignment="Left" Margin="350,80,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="510,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" FontFamily="Times New Roman" FontSize="16"><Run Language="ru-ru" Text="Ряд"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="16 " Margin="670,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="16"><Run Language="ru-ru" Text="Место"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <ComboBox HorizontalAlignment="Left" Height="25" Margin="497,80,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Height="25" Margin="648,80,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="RowComboBox" HorizontalAlignment="Left" Height="25" Margin="497,80,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="PlaceComboBox" HorizontalAlignment="Left" Height="25" Margin="648,80,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Exit" HorizontalAlignment="Left" Height="40" Margin="648,373,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
 
     </Grid>
