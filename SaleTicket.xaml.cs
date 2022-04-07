@@ -95,7 +95,7 @@ namespace Cinema
         {
             FilmComboBoxRefresh();
             HallComboBoxRefresh();
-            //DateTimeComboBoxRefresh();
+            ////DateTimeComboBoxRefresh();
         }
     }
 }
