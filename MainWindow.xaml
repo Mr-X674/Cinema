@@ -20,4 +20,5 @@
         <PasswordBox Name="txtPassword" Background="Black" Foreground="White" FontSize="15" Width="400"/>
         <Button Name="btnSubmit" Content="Enter" Margin="60 100" Background="Black" Foreground="White" FontSize="15" Click="btnSubmit_Click" Width="265"/>
     </StackPanel>
-</Window>
+</Window>       <!--test-->
+      
