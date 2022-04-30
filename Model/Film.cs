@@ -31,7 +31,7 @@ namespace Cinema.Model
         [ForeignKey("sessionid")]
         public session session { get; set; }
 
-        [Required]
+        [Required] 
         public DateTime Date { get; set; }
 
         [Required]
