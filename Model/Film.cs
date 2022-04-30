@@ -36,21 +36,31 @@ namespace Cinema.Model
 
         [Required]
         public DateTime Years { get; set; }
+
         [NotMapped]
         public Genre genre
         {
             get
             {
-                return DataWorker.GetStudentById((int)StudentId);
+                return DataWorker.GetStudentById((int)Genreid);
             }
         }
         [NotMapped]
-        public Ticket Ticket
+        public hall Hall
         {
             get
             {
-                return DataWorker.GetDisciplineById((int)DisciplineId);
+                return DataWorker.GetDisciplineById((int)hallid);
             }
         }
+        [NotMapped]
+        public session Session
+        {
+            get
+            {
+                return DataWorker.GetDisciplineById((int)sessionid);
+            }
+        }
+    
     }
 }
