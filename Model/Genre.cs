@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cinema.Model
 {
-    internal class Genre
+         public class Genre
     {
         [Key]
         public int id { get; set; }

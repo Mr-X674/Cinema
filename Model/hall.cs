@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cinema.Model
 {
-    internal class hall
+     public class hall
     {
         [Key]
         public int id { get; set; }

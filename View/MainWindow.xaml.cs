@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using Cinema.Model.Data;
 
 namespace Cinema
 {
@@ -27,7 +28,7 @@ namespace Cinema
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlConnection = new SqlConnection("Data Source=MSI-AEGIS-TI3;Initial Catalog=Cinema2.0;Integrated Security=True");
+            SqlConnection sqlConnection = new SqlConnection("Data Source=PC-232-08\\SQLEXPRESS;Initial Catalog=CinemaHall;Persist Security Info=True;User ID=sa;Password=4321193");
             try
             {
                 if (sqlConnection.State == ConnectionState.Closed)
